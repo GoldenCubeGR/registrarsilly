@@ -1,5 +1,6 @@
 function logout() {
     deleteCookie('registrarSessionToken');
+    deleteCookie('name');
     location.reload();
 }
 

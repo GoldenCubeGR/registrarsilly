@@ -81,6 +81,7 @@
                     .catch(error => {
                         console.log(error)
                         document.cookie = `name=${name}; expires=${expirationTime}; path=/`;
+                        window.location.href = '/dashboard.html'
                     });
                 }                
 
@@ -114,8 +115,6 @@
                     document.cookie = `registrarSessionToken=${data.hash}; expires=${expirationTime}; path=/`;
 
                     addNameKey(expirationTime);
-
-                    window.location.href = '/dashboard.html'
                 } else {
                     alert('Login failed. Please check your username and password.');
                 }

@@ -65,8 +65,6 @@
                     alert('Domain deleted successfully');
                     removeDomain({ domains }, domainName);
                     updateServerData(domains);
-                    // console.log("reload")
-                    //location.reload();
                 } else {
                     alert('Failed to delete domain');
                 }
@@ -99,7 +97,8 @@
                 location.reload();
             })
             .catch(error => {
-                console.error('Error updating server data:', error);
+                console.error( error);
+                location.reload();
             });
         }
 
@@ -161,6 +160,7 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             const sessionToken = getCookie('registrarSessionToken');
+            const username = getCookie('name');
             const proxyUrl = 'https://auth.smartlinux.xyz/api/readJson';
             const Data = {
                 "website": "registrar.3feds.lol",
@@ -234,6 +234,8 @@
             .catch(error => {
                 console.error('Error:', error);
             });
+            const nameH3 = document.getElementById('name')
+            nameH3.innerText = username
         });
     </script>
     <style>
@@ -277,7 +279,7 @@
         <a href="#" id="logoutButton" style="display:inline;" onclick="logout()">Log Out</a>
     </div>    
     <div class="container">
-        <h1>User Name</h1>
+        <h1 id="name">User Name</h1>
 
         <div class="add-domain">
             <h2>Add Pre Registered Domain</h2>
