@@ -109,7 +109,7 @@ h1 {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     background-color: #333;
     color: #fff; /* White text color */
