@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="./css/sharedcss.css">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('signupForm').addEventListener('submit', async function (event) {
@@ -25,10 +26,7 @@
                 });
 
                 if (response.ok) {
-
-                        if (response.ok) {
-                } else {
-                }
+                    window.location.href = '/login.html'
                 } else {
                 }
             });
@@ -62,12 +60,7 @@
         <button onclick="login()">Login</button>
     </div>
     <footer>
-        © GoldenCube 2024 |
-        <a href="https://www.youtube.com/@goldenCubeGR">YouTube</a> |
-        <a href="https://www.instagram.com/goldencubedev/">Instagram</a> |
-        <a href="https://twitter.com/goldencubeDev">Twitter</a> |
-        <a href="https://www.tiktok.com/@goldencube_official">TikTok</a> |
-        <a href="mailto:info@goldencube.dev">Email</a>
+        © 3feds 2024
     </footer>
 </body>
 </html>

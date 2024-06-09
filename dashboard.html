@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domain Management</title>
     <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/sharedcss.css">
     <script>
         function getCookie(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }   
+        function isloggedincheck(){
+            const sessionToken = getCookie('registrarSessionToken');
+            if (!sessionToken) {
+                window.location.href = '/login.html';
+            }
         }
 
         function truncateString(str, num) {
@@ -86,6 +99,8 @@
             });
         }
 
+        isloggedincheck()
+        
         function openEditIpDialog(key) {
             const dialog = document.createElement('div');
             dialog.classList.add('edit-ip-dialog');
@@ -214,7 +229,6 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                window.location.href = '/login.html';
             });
         });
     </script>
@@ -276,12 +290,7 @@
         </div>
     </div>
     <footer>
-        © GoldenCube 2024 |
-        <a href="https://www.youtube.com/@goldenCubeGR">YouTube</a> |
-        <a href="https://www.instagram.com/goldencubedev/">Instagram</a> |
-        <a href="https://twitter.com/goldencubeDev">Twitter</a> |
-        <a href="https://www.tiktok.com/@goldencube_official">TikTok</a> |
-        <a href="mailto:info@goldencube.dev">Email</a>
+        © 3feds 2024
     </footer>
 </body>
 </html>
