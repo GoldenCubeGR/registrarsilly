@@ -104,6 +104,10 @@
 
         isloggedincheck()
 
+        function addPreRegistered(){
+            console.log('Not Done')
+        }
+
         function openEditIpDialog(key) {
             const dialog = document.createElement('div');
             dialog.classList.add('edit-ip-dialog');
@@ -236,6 +240,11 @@
             });
             const nameH3 = document.getElementById('name')
             nameH3.innerText = username
+
+            const addPre = document.getElementById('addPre-button')
+            checkButton.addEventListener("click", function(event) {
+                addPreRegistered();
+            });
         });
     </script>
     <style>
@@ -285,7 +294,7 @@
             <h2>Add Pre Registered Domain</h2>
             <input type="text" placeholder="Name" class="input-field">
             <input type="text" placeholder="Secret" class="input-field">
-            <button class="add-button">Add</button>
+            <button class="add-button" id="addPre-button">Add</button>
         </div>
 
         <div class="your-domains">
