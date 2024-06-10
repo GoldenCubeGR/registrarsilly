@@ -1,6 +1,23 @@
+/* Variables */
+:root {
+    --font-family: 'Arial', sans-serif;
+    --background-color: #f4f4f4;
+    --primary-color: #213191;
+    --secondary-color: #14c21a;
+    --accent-color: #008cba;
+    --white-color: #fff;
+    --light-grey-color: #ccc;
+    --dark-grey-color: #555;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --padding: 20px;
+    --gap: 16px;
+}
+
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
 }
@@ -8,40 +25,23 @@ body {
 .container {
     max-width: 600px;
     margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: var(--padding);
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
-
-.borderdiv {
-border-style: inset;
-border-radius: 5px;
-}
-div {
+/* Text Centering and Colors */
+div, h1, h2, form {
     text-align: center;
-    color: #333;
+    color: var(--primary-color);
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-}
-
-h2 {
-    text-align: center;
-    color: #333;
-}
-
-form {
-    text-align: center;
-}
-
+/* Inputs and Buttons */
 input {
     padding: 8px;
     width: 200px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-grey-color);
     border-radius: 4px;
 }
 
@@ -55,10 +55,10 @@ button {
 
 #result {
     margin-top: 20px;
-    text-align: center;
 }
 
-.modal {
+/* Modals */
+.modal, .modal2, .modal3 {
     display: none;
     position: fixed;
     z-index: 1;
@@ -68,42 +68,13 @@ button {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal2 {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal3 {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--white-color);
     margin: auto;
-    padding: 20px;
+    padding: var(--padding);
     border: 1px solid #888;
     width: 80%;
 }
@@ -122,16 +93,19 @@ button {
     cursor: pointer;
 }
 
+/* Alternative TLDs */
 #alternativeTlds {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    justify-content: space-between;
     margin-top: 20px;
+    text-align: center;
 }
 
 #alternativeTlds h3 {
-    display: block;
     margin-bottom: 10px;
 }
-
 
 .available-domain {
     display: inline-block;
@@ -139,45 +113,22 @@ button {
     padding: 10px;
     transition: background-color 0.3s, color 0.3s;
 }
-#user {
-    position: relative;
-    /* display: inline-block; */
-}
-#user img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: scale(0.2); /* Scale down to 30% of the original size */
-    transform-origin: top right; /* Ensure scaling from the top right corner */
-}
-#user h2 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform-origin: top right;  /* Ensure scaling from the top right corner */
-}
-#alternativeTlds {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: space-between;
-}
 
-
+/* Domain Boxes */
 .domain-box {
-    flex: 1 1 calc(50% - 16px); /* Adjust the width to ensure two boxes per row */
+    flex: 1 1 calc(50% - var(--gap));
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 1px solid var(--light-grey-color);
+    border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 16px; /* Add margin at the bottom to space rows */
+    margin-bottom: var(--gap);
 }
 
 .color-bar {
     height: 8px;
-    background-color: #4caf50; /* Change this to your desired color */
+    background-color: var(--secondary-color);
 }
 
 .content {
@@ -188,29 +139,27 @@ button {
 }
 
 .AltTldBtn {
-    background-color: #008cba; /* Change this to your desired button color */
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--white-color);
     border: none;
     padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
 }
 
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff; /* White text color */
+    background-color: var(--primary-color);
+    color: var(--white-color);
     padding: 20px 0;
     text-align: center;
-    width: 100%; /* Full width */
+    width: 100%;
 }
 
 footer a {
-    color: #fff;
+    color: var(--white-color);
     text-decoration: none;
     margin: 0 10px;
 }
@@ -218,8 +167,9 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
 #InfoBlack a {
-    color: #fff;
+    color: var(--white-color);
     text-decoration: none;
     margin: 0 20px;
     padding: 10px 15px;
@@ -227,38 +177,26 @@ footer a:hover {
     transition: background-color 0.3s ease;
 }
 
-a {
-    color: #1f1f1f;
-    text-decoration: none;
-    margin: 0 20px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-a:hover {
-    color: #fff;
-    background-color: #555;
+#InfoBlack a:hover {
+    background-color: var(--dark-grey-color);
     text-decoration: underline;
 }
-#InfoBlack{
+
+#InfoBlack {
     width: 180px;
     height: 40px;
-    margin:auto;
+    margin: auto;
     border-radius: 5px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     padding: 10px 0;
     text-align: center;
     display: flex;
     justify-content: center;
     font-size: 18px;
 }
-#InfoBlack a:hover {
-    background-color: #555;
-    text-decoration: underline;
-}
 
+/* About Page */
 #AboutPage h1 {
     color: #2c3e50;
     text-align: center;
@@ -271,8 +209,22 @@ a:hover {
     margin-bottom: 20px;
 }
 
-#AboutPage h1 {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 20px;
+/* User Image */
+#user {
+    position: relative;
+}
+
+#user img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: scale(0.2);
+    transform-origin: top right;
+}
+
+#user h2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: top right;
 }
