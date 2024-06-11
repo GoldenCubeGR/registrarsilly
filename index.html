@@ -85,7 +85,7 @@
         <h2>Help With Buss API</h2>
         <p>@_sakura.sx</p>
     </div>
-
+    <script src="scripts/captcha.js"></script>
     <div id="myModal" class="modal" class="container">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -97,7 +97,9 @@
                 <label for="ipInput">Ip:</label>
                 <input type="text" id="ipInput" required>
             </div>
-	    <p></p>
+            <center>
+            <div id="captcha" class="g-recaptcha"></div>
+            </center>
             <button type="submit" id="regBtnMod">Register Domain</button>
         </div>
     </div>
@@ -115,6 +117,8 @@
     
         const registrarSessionToken = sessionStorage.getItem('registrarSessionToken');
     
+        
+
         document.addEventListener("DOMContentLoaded", function() {
             let tlds = [];
             const inputField = document.getElementById("doavIn");
@@ -480,6 +484,6 @@
             }
         });
 </script>
-    
+<script src="https://www.google.com/recaptcha/api.js?onload=onLoadCallback&render=explicit" async defer></script>
 </body>
 </html>
