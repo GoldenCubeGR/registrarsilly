@@ -219,7 +219,7 @@
                 regBtn.disabled = true;
                 function repeat(){
                     const sessionToken = getCookie('registrarSessionToken');
-                    if (!sessionToken && !regbtnplease) {
+                    if (!sessionToken || !regbtnplease) {
                         console.log("Session Not Found")
                         regBtn.disabled = true;
                     }
