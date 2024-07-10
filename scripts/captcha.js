@@ -18,6 +18,7 @@ function successCallback(token) {
     .then(data => {
         if (data.success) {
             alert('Verification successful');
+            document.getElementById('regBtnMod').disabled = false;
         } else {
             
         }
