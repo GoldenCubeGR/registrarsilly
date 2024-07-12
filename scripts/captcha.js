@@ -1,4 +1,4 @@
 function successCallback() {
-    var regbtnplease = true
+    const regbtnplease = true
     document.getElementById('regBtnMod').disabled = false;
 }
